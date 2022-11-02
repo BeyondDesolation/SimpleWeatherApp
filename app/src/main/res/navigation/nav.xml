@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/weatherDisplayFragment">
+
+    <fragment
+        android:id="@+id/weatherDisplayFragment"
+        android:name="com.bd.simpleweatherapp.presentation.weatherdisplay.WeatherDisplayFragment"
+        android:label="fragment_weather_display"
+        tools:layout="@layout/fragment_weather_display" />
+</navigation>
