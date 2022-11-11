@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bd.simpleweatherapp.data.models.WeatherForecast
+import com.bd.simpleweatherapp.data.models.WeatherForecastInfo
 import com.bd.simpleweatherapp.databinding.CellWeatherForecastBinding
 
 class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
 
-    private var forecasts: List<WeatherForecast> = ArrayList()
+    private var forecasts: List<WeatherForecastInfo> = ArrayList()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(data: List<WeatherForecast>){
+    fun setData(data: List<WeatherForecastInfo>){
         forecasts = data
         notifyDataSetChanged()
     }
@@ -31,14 +31,16 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
     }
 
     class ViewHolder(private val binding: CellWeatherForecastBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: WeatherForecast) {
+        fun bind(item: WeatherForecastInfo) {
             binding.apply {
-                textDateTime.text = item.timeInUnix.toString()
-                textTemperature.text = item.weatherMainParams.temperature.toString()
-                textFillsLike.text = item.weatherMainParams.fillsLike.toString()
-                textCondition.text = item.weatherConditions[0].description
-                textHumidity.text = item.weatherMainParams.humidity.toString()
-                textWind.text = item.wind.speed.toString()
+                textDate.text = item.date
+                textTime.text = item.time
+                textTempMax.text = item.temperatureMax
+                textTempMin.text = item.temperatureMin
+                textFillsLike.text = item.fillsLike
+                textCondition.text = item.condition
+                textHumidity.text = item.humidity
+                textWind.text = item.windSpeed
             }
         }
     }

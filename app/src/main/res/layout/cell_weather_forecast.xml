@@ -1,47 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp">
+    android:layout_marginBottom="32dp">
 
     <TextView
-        android:id="@+id/textDateTime"
+        android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="12 декабря"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textTemperature"
+        android:id="@+id/textTempMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:width="100dp"
-        android:text=""
-        android:textSize="18sp"
+        android:text="-11"
         android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDateTime" />
+        app:layout_constraintTop_toBottomOf="@+id/textDate" />
+
+    <TextView
+        android:id="@+id/textTempMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="-10"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textTempMin"
+        app:layout_constraintTop_toTopOf="@+id/textTempMin" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textTempMax"
+        app:layout_constraintStart_toEndOf="@+id/textTempMin"
+        app:layout_constraintTop_toTopOf="@+id/textTempMin" />
 
     <TextView
         android:id="@+id/textCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-
-        android:text=""
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="2dp"
+        android:text="Дождь"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/textTemperature"
-        app:layout_constraintTop_toTopOf="@+id/textTemperature" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textTempMin" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTemperature">
+        app:layout_constraintTop_toBottomOf="@+id/textTempMin">
 
         <TableRow
             android:layout_marginTop="8dp">
@@ -49,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fills_like"
+                android:textSize="12sp"
                 android:layout_marginEnd="24dp">
             </TextView>
 
@@ -56,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wind"
+                android:textSize="12sp"
                 android:layout_marginEnd="24dp">
             </TextView>
 
@@ -63,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/humidity"
+                android:textSize="12sp"
                 android:layout_marginEnd="24dp">
             </TextView>
         </TableRow>
@@ -94,5 +120,15 @@
             </TextView>
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/textTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="16:45"
+        app:layout_constraintStart_toEndOf="@+id/textDate"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

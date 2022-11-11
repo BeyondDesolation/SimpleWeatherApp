@@ -36,18 +36,29 @@ class WeatherDisplayFragment : Fragment() {
     }
 
     private fun subscribeToViewModel() {
+        viewModel.currentForecast.observe(viewLifecycleOwner, Observer {
+            binding.apply {
+                textDate.text = it.date
+                textTime.text = it.time
+                textTemperatureMain.text = it.temperature
+                textFillsLike.text = it.fillsLike
+                textCondition.text = it.condition
+                textWind.text = it.windSpeed
+                textClouds.text = it.cloudiness
+                textHumidity.text = it.humidity
+                textPressure.text = it.pressure
+            }
+        })
         viewModel.weatherForecastsList.observe(viewLifecycleOwner, Observer { forecasts ->
             if (forecasts.isNotEmpty()) {
-                binding.apply {
-                    textDateTime.text = forecasts[0].timeInUnix.toString()
-                    textTemperatureMain.text = forecasts[0].weatherMainParams.temperature.toString()
-                    textFillsLike.text = forecasts[0].weatherMainParams.fillsLike.toString()
-                    textCondition.text = forecasts[0].weatherConditions[0].description
-                    textClouds.text = forecasts[0].clouds.cloudiness.toString()
-                    textHumidity.text = forecasts[0].weatherMainParams.humidity.toString()
-                    textPressure.text = forecasts[0].weatherMainParams.pressure.toString()
-                }
                 weatherAdapter.setData(forecasts)
+            }
+        })
+        viewModel.cityInfo.observe(viewLifecycleOwner, Observer {
+            binding.apply {
+                textSunrise.text = it.sunrise
+                textSunset.text = it.sunset
+                textCity.text = it.name
             }
         })
     }
@@ -62,3 +73,4 @@ class WeatherDisplayFragment : Fragment() {
         _binding = null
     }
 }
+
