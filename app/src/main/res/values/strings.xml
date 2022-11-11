@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SimpleWeatherApp</string>
+    <string name="fills_like">Ощущается как</string>
+    <string name="wind">Ветер</string>
+    <string name="clouds">Облачность</string>
+    <string name="humidity">Влажность</string>
+    <string name="pressure">Давление</string>
 </resources>
