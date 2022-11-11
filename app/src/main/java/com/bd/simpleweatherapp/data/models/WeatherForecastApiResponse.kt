@@ -22,6 +22,21 @@ data class WeatherForecast (
 data class WeatherMainParams (
     @SerializedName("temp")
     val temperature: Float,
+
+    @SerializedName("feels_like")
+    val fillsLike: Float,
+
+    @SerializedName("temp_min")
+    val temperatureMin: Float,
+
+    @SerializedName("temp_max")
+    val temperatureMax: Float,
+
+    @SerializedName("pressure")
+    val pressure: Float,
+
+    @SerializedName("humidity")
+    val humidity: Float,
 )
 
 data class WeatherCondition (
@@ -36,13 +51,27 @@ data class WeatherCondition (
 )
 
 data class Clouds (
-    @SerializedName("description")
+    @SerializedName("all")
     val cloudiness: Int,
 )
 
 data class Wind (
     @SerializedName("speed")
     val speed: Float,
+)
+
+data class City (
+    @SerializedName("name")
+    val name: String,
+
+    @SerializedName("timezone")
+    val timezoneShiftFromUTC: Long,
+
+    @SerializedName("sunrise")
+    val sunrise: Long,
+
+    @SerializedName("sunset")
+    val sunset: Long,
 )
 
 data class OpenWeatherApiResponse (
@@ -57,4 +86,7 @@ data class OpenWeatherApiResponse (
 
     @SerializedName("list")
     val forecasts: List<WeatherForecast>,
+
+    @SerializedName("city")
+    val city: City,
 )
