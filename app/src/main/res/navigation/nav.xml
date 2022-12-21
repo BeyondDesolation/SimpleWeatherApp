@@ -9,5 +9,18 @@
         android:id="@+id/weatherDisplayFragment"
         android:name="com.bd.simpleweatherapp.presentation.weatherdisplay.WeatherDisplayFragment"
         android:label="fragment_weather_display"
-        tools:layout="@layout/fragment_weather_display" />
+        tools:layout="@layout/fragment_weather_display" >
+        <action
+            android:id="@+id/action_weatherDisplayFragment_to_citySelectionFragment"
+            app:destination="@id/citySelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citySelectionFragment"
+        android:name="com.bd.simpleweatherapp.presentation.cityselection.CitySelectionFragment"
+        android:label="fragment_city_selection"
+        tools:layout="@layout/fragment_city_selection" >
+        <action
+            android:id="@+id/action_citySelectionFragment_to_weatherDisplayFragment"
+            app:destination="@id/weatherDisplayFragment" />
+    </fragment>
 </navigation>

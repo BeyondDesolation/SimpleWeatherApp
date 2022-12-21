@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bd.simpleweatherapp.data.models.WeatherForecastInfo
+import com.bd.simpleweatherapp.data.models.WeatherForecast
 import com.bd.simpleweatherapp.databinding.CellWeatherForecastBinding
 
 class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
 
-    private var forecasts: List<WeatherForecastInfo> = ArrayList()
+    private var forecasts: List<WeatherForecast> = ArrayList()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(data: List<WeatherForecastInfo>){
+    fun setData(data: List<WeatherForecast>){
         forecasts = data
         notifyDataSetChanged()
     }
@@ -31,7 +31,7 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
     }
 
     class ViewHolder(private val binding: CellWeatherForecastBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: WeatherForecastInfo) {
+        fun bind(item: WeatherForecast) {
             binding.apply {
                 textDate.text = item.date
                 textTime.text = item.time

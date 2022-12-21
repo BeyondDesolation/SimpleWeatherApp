@@ -1,6 +1,6 @@
 package com.bd.simpleweatherapp.data.models
 
-data class CityInfo (
+data class PlaceDaylightHours (
     val name: String,
     val sunrise: String,
     val sunset: String,

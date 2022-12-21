@@ -6,4 +6,11 @@
     <string name="humidity">Влажность</string>
     <string name="pressure">Давление</string>
     <string name="daylightHours">Световой день</string>
+    <string name="city_selection">Выбор города</string>
+    <string name="new_place">Новое место</string>
+    <string name="add">Добавить</string>
+    <string name="add_place">Добавить место</string>
+    <string name="use_is3166_hint">(Укажите название города по стандарту ISO 3166)</string>
+    <string name="city">Город</string>
+    <string name="confirm">Подтвердить</string>
 </resources>

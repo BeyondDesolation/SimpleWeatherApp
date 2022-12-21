@@ -1,8 +1,8 @@
-package com.bd.simpleweatherapp.data.models
+package com.bd.simpleweatherapp.data.models.apiresponses
 
 import com.google.gson.annotations.SerializedName
 
-data class WeatherForecast (
+data class WeatherForecastApi (
     @SerializedName("dt")
     val timeInUnix: Long,
 
@@ -85,7 +85,7 @@ data class OpenWeatherApiResponse (
     val count: Int,
 
     @SerializedName("list")
-    val forecasts: List<WeatherForecast>,
+    val forecasts: List<WeatherForecastApi>,
 
     @SerializedName("city")
     val city: City,

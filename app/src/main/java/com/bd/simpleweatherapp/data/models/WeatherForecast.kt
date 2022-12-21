@@ -1,6 +1,6 @@
 package com.bd.simpleweatherapp.data.models
 
-data class WeatherForecastInfo (
+data class WeatherForecast (
     val date: String,
     val time: String,
     val temperature: String,
